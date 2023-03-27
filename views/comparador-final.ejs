@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulário de upload de imagem</title>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-JxyDd6PN0+6U0N6U4C4UjJFv/C9PIjXNO1lf5r5e5d5VzKjYPF02w86hI1EgY/FnQQZ1zXpCrc7BktFbRcR7DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="/css/style.css"/>
+  
+  </head>
+  <body>
+
+    <div class="wrapper">
+        <div class="editor-container">
+
+          <form method="POST" enctype="multipart/form-data" action="/uploads">
+            <label for="imagem1">Selecione a imagem 1:</label>
+            <input type="file" id="imagem1" name="imagem1"><br><br>
+            
+            <label for="imagem2">Selecione a imagem 2:</label>
+            <input type="file" id="imagem2" name="imagem2"><br><br>
+            
+            <input type="submit" value="Enviar">
+          </form>
+          
+            <!-- <form class="upload-form" action="/upload" method="post" enctype="multipart/form-data" onsubmit="return validateForm() && showLoader()">
+              <input type="file" id="file-input" multiple />
+              <label for="file-input">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                &nbsp; Choose Files To Upload
+              </label>
+              <div id="num-of-files">No Files Choosen</div>
+              <ul id="files-list"></ul>
+            </div>
+                <input class="upload-button" type="submit" value="Enviar">
+                <div class="loader"></div>
+              </form> -->
+          
+        </div>
+
+    <script src="/js/uploadImgs.js"></script>
+  </body>
+</html>

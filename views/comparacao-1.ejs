@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Editor With Download</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Cropper CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="editor-container">
+        <div class="image-container">
+          <img id="image" />
+        </div>
+        <input type="file" id="file" accept="image/*" />
+        <label for="file">Escolha a Foto da Assinatura</label>
+        <div class="options-btn hide">
+          <button id="rotate-left">
+            <img src="./icons/rotate-left.png" />
+          </button>
+          <button id="rotate-right">
+            <img src="./icons/rotate-right.png" />
+          </button>
+          <button id="scale-X-button">
+            <img src="./icons/flip-hori.png" />
+          </button>
+          <button id="scale-Y-button">
+            <img src="./icons/flip-ver.png" />
+          </button>
+          <button class="aspect-ratio-btns">16:9</button>
+          <button class="aspect-ratio-btns">4:3</button>
+          <button class="aspect-ratio-btns">1:1</button>
+          <button class="aspect-ratio-btns">2:3</button>
+          <button class="aspect-ratio-btns">Free</button>
+        </div>
+        <div class="action-btns">
+          <button id="preview" class="hide">Visualizar</button>
+          <a href="" id="download" class="hide">Salvar</a>
+        </div>
+      </div>
+      <div class="preview-container">
+        <img id="preview-image" />
+        <div class="next-btn">
+          <a href="/passo-2" id="next">Proximo >>> </a>
+        </div>
+      </div>
+
+      
+     
+      
+    </div>
+    <!-- Script -->
+    <script src="/js/comp1.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </body>
+</html>
