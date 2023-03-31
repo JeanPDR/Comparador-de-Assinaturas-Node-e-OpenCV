@@ -8,15 +8,6 @@ const app = express();
 
 const upload = require('./public/js/multerConfig');
 
-// app.post('/upload', upload.single('imagem'), function (req, res, next) {
-//   // req.file contém informações sobre o arquivo enviado
-//   res.redirect('/resultado');
-// });
-
-// app.post('/uploads', upload.fields([{ name: 'imagem1', maxCount: 1 }, { name: 'imagem2', maxCount: 1 }]), (req, res) => {
-//   console.log(req.files);
-//   res.redirect('/resultado');
-// });
 
 app.post('/uploads', upload.fields([{ name: 'imagem1', maxCount: 1 }, { name: 'imagem2', maxCount: 1 }]), (req, res) => {
   const img1TempPath = req.files['imagem1'][0].path;
@@ -50,31 +41,28 @@ const deleteFiles = () => {
     });
   });
 };
-
+// Rotas para utilizar arquivos estaticos
+app.use(express.static('public'));
+app.use(express.static('public/css'));
+app.use(express.static('public/js'));
 // Rota para excluir os arquivos com nomes específicos
 app.post('/delete-files', (req, res) => {
   deleteFiles();
   res.redirect('/');
 });
-app.use(express.static('public'));
-app.use(express.static('public/css'));
-app.use(express.static('public/js'));
-
+// Rota que permite a visualização de paginas (Views)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('comparacao-1');
-});
-
-app.get('/passo-2', (req, res) => {
-  res.render('comparacao-2');
-});
-
-app.get('/comparador-final', (req, res) => {
   res.render('comparador-final');
 });
 
+app.get('/photo-editor', (req, res) => {
+  res.render('photo-editor');
+});
+
+// rota que execulta codigo em Python com Node
 app.get('/resultado', (req, res) => {
   const pyProg = spawn('python', ['opencv.py']);
 

@@ -103,6 +103,21 @@
 input[type="file"] {
   display: none;
 }
+
+input[type="submit"] {
+  display: block;
+  background-color: #eb0b41;
+  color: #ffffff;
+  width: 12em;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 1em 0;
+  border-radius: 0.3em;
+  border: none;
+  margin: auto;
+  cursor: pointer;
+
+}
 label {
   display: block;
   background-color: #eb0b41;

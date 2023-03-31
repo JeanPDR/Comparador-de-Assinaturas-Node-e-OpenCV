@@ -34,9 +34,9 @@ def orb_sim(img1, img2):
         return 0
     return len(similar_regions) / len(matches)
 
-# Função do Opencv para fazer a leitura das imagens
-img00 = cv2.imread('./uploads/img1.jpg', 0)
-img01 = cv2.imread('./uploads/img2.jpg', 0)
+# Função do Opencv para fazer a leitura das imagens (cv2.IMREAD_GRAYSCALE Passa a Ler imagens com uma escala cinza) 
+img00 = cv2.imread('./uploads/img1.jpg', cv2.IMREAD_GRAYSCALE) 
+img01 = cv2.imread('./uploads/img2.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Função opencv para redimensionar as inmagens, pois se elas estivem em dimensões diferente dá erro no código
 img00Res = cv2.resize(img00, (1200, 600))
