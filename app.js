@@ -3,11 +3,29 @@ const { spawn } = require('child_process');
 const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
+const mysql = require('mysql2/promise');
+
+
 
 const app = express();
-
 const upload = require('./public/js/multerConfig');
 
+// Conexão com o banco de dados
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'user',
+  password: 'password',
+  database: 'database'
+});
+
+
+function calcularPorcentagem(resultado) {
+  // Implemente aqui o cálculo da porcentagem a partir do resultado da consulta.
+  // Exemplo:
+  const total = resultado.length;
+  const letrasA = resultado.match(/[aA]/g).length;
+  return ((letrasA / total) * 100).toFixed(2);
+}
 
 app.post('/uploads', upload.fields([{ name: 'imagem1', maxCount: 1 }, { name: 'imagem2', maxCount: 1 }]), (req, res) => {
   const img1TempPath = req.files['imagem1'][0].path;
