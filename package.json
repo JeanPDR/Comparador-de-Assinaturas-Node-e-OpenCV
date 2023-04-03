@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "concurrently \"nodemon app.js\" \"sequelize db:migrate\""
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +13,14 @@
     "child_process": "^1.0.2",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "handlebars": "^4.7.7",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.2.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.30.0",
+    "sequelize-typescript": "^2.1.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
   }
 }
