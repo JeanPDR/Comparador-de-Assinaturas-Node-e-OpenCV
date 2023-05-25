@@ -14,7 +14,9 @@ Este projeto tem como finalidade comparar assinaturas de documentos e trazer a p
 
 ## Instalação
 
-Explique passo a passo como instalar e configurar o ambiente necessário para rodar o projeto. Inclua requisitos de software, dependências e instruções para a instalação.
+Para Ralizar a instalação/configuração do site será necessário que possui a seguintes tecnologias instaladas em seu computador:
+
+`NodeJS` `Python` e `OpenCv`
 
 Exemplo:
 
