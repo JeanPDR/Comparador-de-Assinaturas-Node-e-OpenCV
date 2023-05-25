@@ -24,11 +24,7 @@ Exemplo:
 
 ## Uso
 
-Explique como usar o projeto. Forneça exemplos de código, instruções ou demonstrações de uso. Inclua também informações sobre configurações opcionais e funcionalidades avançadas.
-
-Exemplo:
-
-Para iniciar o servidor, execute o seguinte comando:
+Para visualizar a aplicação na web será necessário iniciar com os seguintes comandos abaixo:
 
 ```bash
 npm start
